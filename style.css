@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --primary-color: #30336b;
+  --secondary-color: #be2edd;
+  --light-text-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+body.show-menu {
+  transform: translateX(200px);
+}
+
+nav {
+  background-color: var(--primary-color);
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 2px solid rgba(200, 200, 200, 0.1);
+  z-index: 100;
+  transform: translateX(-100%);
+}
+
+.logo {
+  text-align: center;
+  padding: 20px;
+}
+.logo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  margin: 15px 0;
+  padding: 20px;
+  border-bottom: 2px solid rgba(200, 200, 200, 0.1);
+}
+ul li:first-of-type {
+  border-top: 2px solid rgba(200, 200, 200, 0.1);
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--light-text-color);
+}
+ul li a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  text-align: center;
+  padding: 40px 15px;
+  position: relative;
+  font-size: 1.3rem;
+}
+h1 {
+  margin: 0;
+}
+header p {
+  margin: 30px 0;
+}
+
+button,
+input[type="submit"] {
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+header .toggle {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+header .cta-btn {
+  padding: 12px 30px;
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 100%;
+  width: 800px;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
+.modal .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  font-size: 25px;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  padding: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  display: inline;
+  border-bottom: 1px solid #333;
+}
+
+.modal-content {
+  padding: 20px;
+}
+.modal-form div {
+  margin: 15px 0;
+}
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-input {
+  width: 100%;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  padding: 8px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
